@@ -1,0 +1,35 @@
+/* Enter your custom styles here */
+.red {
+    background-color: red !important;
+    color: white;
+    width: 100%;
+}
+.green {
+    background-color: green !important;
+    color: white;
+    width: 100%;
+    
+}
+.yellow {
+    background-color: yellow !important;
+    width: 100%;
+}
+
+
+  span[data-colorcode = "green"]{
+      background-color : rgba(16, 214, 16, 0.829) !important;
+      width: 100%;
+    }  
+  span[data-colorcode = "yellow"]{
+      background-color : rgba(226, 223, 17, 0.904) !important;
+      width: 100%;
+    }  
+  span[data-colorcode = "red"]{
+      background-color : rgba(238, 36, 53, 0.856) !important;
+      width: 100%;
+    }    
+
+    /* td[class="sapUiTableCell sapUiTableContentCell sapUiTableDataCell"]{
+        background-color: yellowgreen !important;
+    } */
+  

@@ -1,0 +1,72 @@
+<mvc:View
+    controllerName="uitable.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+	xmlns:tab="sap.ui.table"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<tab:Table rows="{/productionList}" id="uitab">
+						<tab:columns>
+						<tab:Column >
+						<tab:label><Label text="first"></Label></tab:label>
+						<tab:template></tab:template>
+						</tab:Column>
+
+						<tab:Column >
+						<tab:label><Label text="ProductName"></Label></tab:label>
+						<tab:template><Label text="{productName}"></Label></tab:template>
+						</tab:Column>
+
+						<tab:Column >
+						<tab:label><Label text="Brand"></Label></tab:label>
+						<tab:template><Label text="{brand}"></Label></tab:template>
+						</tab:Column>
+
+						<tab:Column  class="red">
+						<tab:label><Label text="Quantity"></Label></tab:label>
+
+						<tab:template >
+						<Label 
+						 text="{quantity}">
+						   <customData>
+						 <core:CustomData 
+						 value="{= ${quantity} > 50 ? 'green' : ${quantity} >= 25 ? 'yellow' : 'red'}"
+						  key="colorcode" writeToDom="true">
+						 </core:CustomData>
+						 </customData> 
+						</Label>
+						</tab:template>
+						</tab:Column>
+
+							<tab:Column >
+						<tab:label><Label text="Status"></Label></tab:label>
+						<tab:template>
+						
+						<ObjectStatus
+						 state="{= ${quantity} > 50 ? 'Success' : ${quantity} >= 25 ? 'Warning' : 'Error'}"
+					    text="{= ${quantity} > 50 ? 'Available' : ${quantity} >= 25 ? 'Low' : 'outOfStock'}"
+						>
+						</ObjectStatus>
+						</tab:template>
+						</tab:Column>
+
+						<tab:Column >
+						<tab:label><Label text="Amount"></Label></tab:label>
+						<tab:template><Label text="{amount}"></Label></tab:template>
+						</tab:Column>
+						</tab:columns>
+						</tab:Table>
+						
+						<tab:Table id="newtab" rows="{/productionList}"></tab:Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
